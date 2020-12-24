@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-size: 14px;
+    font-family: sans-serif;
+}
+body{
+    padding: 40px 10px;
+    background-color: #000;
+}
+.hospital-section{
+    margin-bottom: 50px;
+}
+strong{
+    color: #0febc2;
+}
+.title{
+    text-transform: uppercase;
+    color: #b8deee;
+    font-size: 16px;
+}
+.title span{
+    font-size: 11px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 24px;
+    margin: 10px auto 0;
+    color: #4a788b;
+    border-radius: 10px;
+}
+table thead{
+    background-color: #d32f2f;
+    color: yellow;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.smart-table .dr-bg{
+    background-color: #000;
+    color: #fff;
+}
+.smart-table .time-bg{
+    background-color: yellow;
+    color: #000;
+}
+table th, table td{
+    border: 1px solid #6fcfff;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+table td{
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background-color: #8a0e22;
+}
+table .active{
+    background-color: green;
+}
+
+
+
+@media screen and (max-width:767px){
+       .title{
+        text-align: left;
+    }
+    .smart-table td.sl-color{
+        border-top: 3px solid rgb(14, 9, 9);
+        border-right: 3px solid white;
+        border-bottom: 3px solid white;
+        border-left: 3px solid white;
+    }
+    .smart-table thead{
+        display: none;
+    }
+    .smart-table tr, .smart-table td{
+        display: block;
+    }
+    .smart-table tr:not(:last-child){
+        border-bottom: 8px solid #000;
+    }
+    .smart-table td{
+        padding-left: 54%;
+        background-color: #4d141e;
+        color: rgb(250, 249, 249);
+        position: relative;
+    }
+    .smart-table td::before{
+        position: absolute;
+        content: attr(data-title);
+        left: 0;
+        top: 0;
+        bottom: 0;
+        padding: 5px;
+        background-color: #0a365a;
+        color: yellow;
+        width: 45%;
+        font-weight: bold;
+    }
+    .smart-table .dr-bg{
+        background-color: #000;
+    }
+    .smart-table .time-bg{
+        background-color: yellow;
+        color: #000;
+    }
+    .smart-table .active{
+        background-color: green;
+    }
+
+}
+
+@media screen and (min-width:768px){
+    .smart-table{
+        table-layout: auto;
+    }
+    .r-style{
+        overflow-x: auto;
+    }
+}
+

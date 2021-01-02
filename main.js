@@ -24,7 +24,7 @@ function calculate_age(x){
         calculated_month = toDay_date_month - birth_date_month;
    }else if(toDay_date_day < birth_date_day){
         calculated_day = (toDay_date_day + 30) - birth_date_day;
-        calculated_month = toDay_date_month - birth_date_month - 1;
+        calculated_month = (toDay_date_month+12) - birth_date_month - 1;
         calculated_age = toDay_date_year - birth_date_year - 1;
    }else if(toDay_date_month > birth_date_month){
         calculated_age = toDay_date_year - birth_date_year;

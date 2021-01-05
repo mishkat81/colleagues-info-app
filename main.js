@@ -18,23 +18,30 @@ function calculate_age(x){
     var calculated_age = toDay_date_year - birth_date_year;
     
 
-    if(toDay_date_day > birth_date_day){
-        calculated_day = toDay_date_day - birth_date_day;
-        calculated_age = toDay_date_year - birth_date_year;
-        calculated_month = toDay_date_month - birth_date_month;
-   }else if(toDay_date_day < birth_date_day){
-        calculated_day = (toDay_date_day + 30) - birth_date_day;
-        calculated_month = (toDay_date_month+12) - birth_date_month - 1;
-        calculated_age = toDay_date_year - birth_date_year - 1;
-   }else if(toDay_date_month > birth_date_month){
-        calculated_age = toDay_date_year - birth_date_year;
-        calculated_month = toDay_date_month - birth_date_month;
-   }else if(toDay_date_month < birth_date_month){
-        calculated_age = toDay_date_year - birth_date_year - 1;
-        calculated_month = (toDay_date_month + 12) - birth_date_month;
-   }else{
-    calculated_age = toDay_date_year - birth_date_year;
-   }
+   if(toDay_date_day > birth_date_day){
+     calculated_day = toDay_date_day - birth_date_day;
+     if(toDay_date_month == birth_date_month){
+          calculated_age = toDay_date_year - birth_date_year;
+     }else{
+          if(toDay_date_month > birth_date_month){
+               calculated_month = toDay_date_month - birth_date_month;
+               calculated_age = toDay_date_year - birth_date_year;
+          }else{
+               calculated_month = (toDay_date_month + 12) - birth_date_month;
+               calculated_age = toDay_date_year - birth_date_year - 1;
+          }
+     }
+     
+}else{
+     calculated_day = (toDay_date_day + 30) - birth_date_day;
+     if(toDay_date_month > birth_date_month){
+          calculated_month = toDay_date_month - birth_date_month;
+          calculated_age = toDay_date_year - birth_date_year;
+     }else{
+          calculated_month = (toDay_date_month + 12) - birth_date_month - 1;
+          calculated_age = toDay_date_year - birth_date_year - 1;
+     }
+}
 
     return ('Year: '+calculated_age+', Month: '+calculated_month+', Day: '+calculated_day);
 
